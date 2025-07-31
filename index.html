@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starship - Digital Transformation Marketing & Consultancy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            line-height: 1.6;
+            color: #333;overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: #4E81EE;
+            padding: 8px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 18px;
+            color: #4A90E2;
+        }
+        .menu-toggle {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #4A90E2;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: #4E81EE;
+            min-height: 110vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            padding: 100px 20px 50px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" patternUnits="userSpaceOnUse" width="100" height="100"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            text-align: left;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+        }
+
+        span.tt2 {
+            text-align: left;
+            display: inline-block;
+            margin-right: 0;
+            margin-left: auto;
+        }
+        .hero h1 strong {
+            font-weight: 700;
+        }
+
+        .ampersand {
+            font-size: 1.2em;
+            opacity: 0.8;
+            font-weight: 300;
+        }
+
+        .tagline {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .hero-description {
+            font-size: 40px;
+            opacity: 0.8;
+            max-width: unset;
+            margin: 0 auto;
+            line-height: 1.4;
+            text-align: left;
+            font-weight: 300;
+        }
+
+        /* Services Section */
+        .services {
+/*            background: #f8f9fa;*/
+            padding: 100px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .section-title {
+            font-size: 94px;
+            font-weight: 600;
+            line-height: 1.1;
+            color: #1E1E1E;
+            margin-bottom: 60px;
+        }
+        .section-title .impacttt {
+            margin-left: 280px;
+        }
+        .section-title .ampersand {
+            color: #4E81EE;font-weight: 400;font-size: 140px;opacity: 1;
+         }
+        .section-title strong {
+            font-weight: 700;
+        }
+
+        .service-item {
+            margin-bottom: 40px;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .service-item::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 30px;height: 30px;background-image: url(img/vector-5.png);background-size: contain;background-repeat: no-repeat;
+        }
+
+        .service-title {
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .service-description {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .right-services {
+            padding-left: 40px;
+        }
+
+        /* Design & Strategy Section */
+        .design-strategy {
+            padding:0px 20px;
+            position: relative;
+/*            overflow: hidden;*/
+        }
+
+        .design-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0px;
+            align-items: start;
+        }
+        .design-strategy h2.section-title {
+            text-align: right;
+        }
+
+        /* Execute & Activate Section */
+        .execute {
+            background: #fff;
+            padding: 100px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .execute::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            left: -20%;
+            width: 600px;
+            height: 600px;
+            background: linear-gradient(135deg, rgba(74, 144, 226, 0.08) 0%, rgba(156, 39, 176, 0.08) 100%);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .execute-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: #4E81EE;
+            padding: 80px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .cta h2 {
+            font-size: 64px;
+            font-weight: 300;
+            line-height: 1.2;
+            margin-bottom: 40px;
+            letter-spacing: 30px;text-transform: uppercase;
+        }
+        p.trademark {
+            font-size: 22px;
+            background: #4e81ee;
+            margin: 60px -20px;
+            padding: 20px;
+            font-weight: 700;
+        }
+        .cta-contact {
+            margin: 60px 0 40px;
+        }
+
+        .cta-contact p {
+            font-size: 40px;
+            margin-bottom: 0;
+            opacity: 0.9;
+            color: #000;
+            line-height: 1;
+        }
+
+        .email-link {
+            color: white;
+            text-decoration: underline;
+            font-weight: 400;
+            font-size: 40px;
+        }
+
+        .locations {
+            margin-top: 80px;
+            margin-bottom: 80px;
+        }
+
+        .locations h3 {
+            font-size: 48px;
+            font-weight: 300;
+            letter-spacing: 30px;
+            line-height: 1.4;
+        }
+
+        /* Footer */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .trademark {
+            font-size: 12px;
+            opacity: 0.8;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        .company-info {
+            font-size: 40px;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .services-grid,
+            .design-content,
+            .execute-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .right-services {
+                padding-left: 0;
+            }
+
+            .hero {
+                padding: 80px 20px 40px;
+            }
+
+            .services,
+            .design-strategy,
+            .execute {
+                padding: 60px 20px;
+            }
+
+            .cta {
+                padding: 80px 20px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .service-item {
+            animation: fadeInUp 0.6s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .service-item:nth-child(1) { animation-delay: 0.1s; }
+        .service-item:nth-child(2) { animation-delay: 0.2s; }
+        .service-item:nth-child(3) { animation-delay: 0.3s; }
+        .service-item:nth-child(4) { animation-delay: 0.4s; }
+        .service-item:nth-child(5) { animation-delay: 0.5s; }
+        .service-item:nth-child(6) { animation-delay: 0.6s; }
+        .logo img {max-width: 82px;}
+        .tt1 {
+            display: block;text-align: left;padding-left: 100px;
+        }
+        .container {
+            max-width: 1360px;width: 100%;margin: 0 auto;
+        }
+        .hero-content {
+            width: 100%;max-width: 100% !important;
+        }
+        section.hero {
+            position: relative;
+            overflow: hidden;
+        }
+        .vector1 {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+        }
+        .vector1 img {
+            width: 102%;
+        }
+        .insightandimpact h2.section-title, .design-strategy  h2.section-title {
+            position: relative;
+        }
+        .insightandimpact h2.section-title:before, .design-strategy  h2.section-title:before{
+            content: "";
+            position: absolute;
+            top: 60px;
+            left: -160px;
+            width: 320px;
+            height: 450px;
+            background-image: url('img/vectortitle.png');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .right-services {
+            padding-top: 60px;
+        }
+        .design-strategy h2.section-title:before {
+            right: -150px;
+            left: auto;
+            background-image: url('img/vectortt2.png');
+            top: 160px;
+        }
+        .design-content h2.section-title {
+            margin-top: -60px;
+        }
+        .executeactivatesec {
+            padding-top: 50px;
+        }
+        .cta {position: relative;}
+        .cta:before {
+            content: "";
+            position: absolute;
+            top: 0px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('img/footershade.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .company-info {
+            font-size: 40px;
+            line-height: 1.4;
+            opacity: 1;
+            padding: 50px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="img/logo.png" />
+        </div>
+        <button class="menu-toggle">
+            <svg width="30" height="27" viewBox="0 0 30 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0.5" y1="1.35547" x2="29" y2="1.35547" stroke="white" stroke-width="2"/>
+            <path d="M0 14.363L29.5 14.3555" stroke="white" stroke-width="2"/>
+            <line x1="0.5" y1="25.3633" x2="29" y2="25.3633" stroke="white" stroke-width="2"/>
+            </svg>
+
+        </button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="vector1"><img src="img/line.png"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>
+                   NavigatING YOUR BrandS to <br>Purposeful Growth ™
+                </h1>
+                <p class="hero-description">
+                    Starship Brings Agility, Relevance,<br>
+                    and Measurable Business<br>
+                    Outcomes to the Modern Marketer.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services insightandimpact">
+        <div class="container">
+            <div class="services-grid">
+                <div class="left-services">
+                    <h2 class="section-title">
+                        INSIGHTS <span class="ampersand">&</span><br>
+                        <span class="impacttt">IMPACT</span>
+                    </h2>
+                </div>
+                <div class="right-services">
+                    <div class="service-item">
+                        <h3 class="service-title">PROPRIETARY DIGITAL AUDIT TOOL</h3>
+                        <p class="service-description">
+                            Comprehensive diagnostics to assess digital readiness and performance gaps.
+                        </p>
+                    </div>
+                    <div class="service-item">
+                        <h3 class="service-title">ATTENTION FIRST ADVERTISING (& PARTNERSHIP WITH LUMEN EYE TRACKING)</h3>
+                        <p class="service-description">
+                            Decode how real users engage with your content to sharpen creative and media strategy.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design & Strategy Section -->
+    <section class="design-strategy">
+        <div class="container">
+            <div class="design-content">
+                <div>                    
+                    <div class="service-item">
+                        <h3 class="service-title">DIGITAL & MARKETING STRATEGY</h3>
+                        <p class="service-description">
+                            Data-driven consulting tailored to digital audiences.
+                        </p>
+                    </div>
+                    <div class="service-item">
+                        <h3 class="service-title">DIGITAL STACK IMPLEMENTATION</h3>
+                        <p class="service-description">
+                            Modernise and integrate technology that powers your business.
+                        </p>
+                    </div>
+                    <div class="service-item">
+                        <h3 class="service-title">MARKETING AUTOMATION</h3>
+                        <p class="service-description">
+                            Personalised AI workflows automated across your consumer journey from awareness to conversion.
+                        </p>
+                    </div>
+                    <div class="service-item">
+                        <h3 class="service-title">PURPOSE LED</h3>
+                        <p class="service-description">
+                            Purpose marketing that moves hearts and markets.
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="section-title">
+                        DESIGN <span class="ampersand">&</span><br>
+                        <strong>STRATEGY</strong>
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Execute & Activate Section -->
+     <section class="services insightandimpact executeactivatesec">
+        <div class="container">
+            <div class="services-grid">
+                <div class="left-services">
+                    <h2 class="section-title">
+                        EXECUTE <span class="ampersand">&</span><br>
+                        <span class="impacttt">ACTIVATE</span>
+                    </h2>
+                </div>
+                <div class="right-services">
+                    <div class="service-item">
+                        <h3 class="service-title">AI CONTENT & CREATIVE STUDIO</h3>
+                        <p class="service-description">
+                            On-brand content at the speed of thought: from TV to Reels to TVCs.
+                        </p>
+                    </div>
+                    <div class="service-item">
+                        <h3 class="service-title">CAMPAIGN DEPLOYMENT & SOCIAL ACTIVATION</h3>
+                        <p class="service-description">
+                            Comprehensive campaign and social media: From a single insight to a full campaign.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>
+                ARE YOU<br>
+                READY TO<br>
+                BOARD<br>
+                STARSHIP?
+            </h2>
+            <div class="cta-contact">
+                <p>Write to us on</p>
+                <a href="mailto:contact@starshipindia.in" class="email-link">contact@starshipindia.in</a>
+            </div>
+            <div class="locations">
+                <h3>
+                    MUMBAI<br>
+                    KOLKATA<br>
+                    NEW DELHI
+                </h3>
+            </div>
+        </div>
+
+        <p class="trademark">
+            NAVIGATING YOUR BRANDS TO PURPOSEFUL GROWTH ™ AND PURPOSE LED ™<br>
+            ARE REGISTERED TRADEMARKS OF STARSHIP.
+        </p>
+            <p class="company-info">
+                Founded in 2021, Starship is Udyogm registered<br>
+                with Government of India (Ministry of Micro<br>
+                Small and Medium Enterprises).
+            </p>
+    </section>
+
+
+    <script>
+        // Smooth scrolling for any navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add scroll effect to header
+        // window.addEventListener('scroll', function() {
+        //     const header = document.querySelector('.header');
+        //     if (window.scrollY > 100) {
+        //         header.style.background = 'rgba(255, 255, 255, 0.98)';
+        //         header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+        //     } else {
+        //         header.style.background = 'rgba(255, 255, 255, 0.95)';
+        //         header.style.boxShadow = 'none';
+        //     }
+        // });
+
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            // Add mobile menu functionality here if needed
+            console.log('Mobile menu clicked');
+        });
+    </script>
+</body>
+</html>
